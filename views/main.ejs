@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Prisijungimas</title>
+    <script defer src="/socket.io/socket.io.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script defer src="main.js"></script>
+    <link rel="stylesheet" href="/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="main">
+        <div id="main-header">
+            <h1>Užsisakyti</h1>
+        </div>
+        <form id="order-form">
+            <input type="text" name="who" id="who" placeholder="Kieno" required>
+            <input type="text" name="order" id="order" placeholder="Užsakymas" height="400px" required>
+            <div id="kurjeriai">
+                <div id="augustas" class="kurjeriai">
+                    <input type="radio" id="augustas" name="drone" value="augustas"/>
+                    <label for="augustas">Augustas</label>
+                </div>
+                
+                <div id="leonas" class="kurjeriai">
+                    <input type="radio" id="leonas" name="drone" value="leonas" checked/>
+                    <label for="leonas">Leonas</label>
+                </div>
+                
+                <div id="giedrius" class="kurjeriai">
+                    <input type="radio" id="giedrius" name="drone" value="giedrius"/>
+                    <label for="giedrius">Giedrius</label>
+                </div>
+            </div>
+            <h5>Grynais</h5>
+            <input type="checkbox" name="metal" id="metal">
+            <input type="submit" value="Siūsti">
+        </form>
+        <div id="main-reminder">
+            <h5 style="color: white;">Prisiminkite! Pristatymas 0.10Eur</h5>
+        </div>
+    </div>
+</body>
+</html>

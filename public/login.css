@@ -1,0 +1,59 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    font-family: 'Noto Sans TC', sans-serif;
+}
+body{
+    height: 100%;
+    background-image: url("https://e1.pxfuel.com/desktop-wallpaper/333/595/desktop-wallpaper-summer-trees-lake-mountains-nature-landscape-1080x1920-iphone-summer-in-the-mountains.jpg");
+    background-position: 70% top;
+    background-repeat: no-repeat;
+}
+#main{
+    position: relative;
+    left: 50%;
+    transform: translate(-50%,50%);
+    text-align: center;
+    margin-top: 150px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
+    list-style: none;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+    height: 300px;
+    width: 400px;
+}
+#main li {
+    height: 150px;
+}
+#main li h1{
+    position: relative;
+    top: 50%;
+    transform: translate(0%,-50%);
+}
+#main form{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+#main form input{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    height: 30px;
+}
+#main form input[required=""]{
+    border: none;
+    background: none;
+    border-bottom: solid 1px white;
+    overlay: none;
+    color: rgb(0, 0, 0);
+    font-size: 18px;
+}
+#main form input[type="submit"]{
+    border: solid 1px white;
+    background: white;
+    border-radius: 15px;
+}

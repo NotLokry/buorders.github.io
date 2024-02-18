@@ -1,0 +1,30 @@
+body{
+    overflow-x: hidden;
+    background: linear-gradient(to bottom, rgb(155, 173, 169), rgb(58, 65, 85));
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding: 0px;
+    font-weight: 600;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 0%;
+}
+.order_box{
+    margin: 30px ;
+    width: 300px;
+    background-color: white;
+    border-radius: 15px;
+}
+.who{
+    transform: translate(5%,-30%);    
+}
+.order{
+    transform: translate(5%,-100%);
+}
+.grynais{
+    transform: translate(5%,0%);
+}
+.atlikta{
+    transform: translate(420%,245%);
+}

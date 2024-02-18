@@ -1,0 +1,82 @@
+body{
+    overflow-y: hidden;
+    background: linear-gradient(to bottom, rgb(155, 173, 169), rgb(58, 65, 85));
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 0px;
+    text-align: center;
+    font-weight: 600;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+ul{
+    list-style-type: none;
+}
+h1{
+    color: white;
+    -webkit-text-stroke: .8px black;
+    padding-top: 50px;
+    padding-bottom: 100px;
+    font-size: 44px;
+}
+ul#main{
+    padding-top: 20px;
+}
+input#name{
+    font-size: x-large;
+    border: none;
+    border-bottom: solid 2px;
+    background: none;
+    transition: all 0.2s ease-out 50ms;
+}
+input#email{
+    font-size: x-large;
+    border: none;
+    border-bottom: solid 2px;
+    background: none;
+    transition: all 0.2s ease-out 50ms;
+}
+input#password{
+    font-size: x-large;
+    border: none;
+    border-bottom: solid 2px;
+    background: none;
+    transition: all 0.2s ease-out 50ms;
+}
+input[type=submit]{
+    font-size: x-large;
+    border: none;
+    border-bottom: solid 2px;
+    background: none;
+    transition: all 0.2s ease-out 50ms;
+}
+input:hover{
+    color: rgb(42, 49, 70);
+}
+input[type=password]:focus{
+    color: rgb(42, 49, 70);
+    outline: none;
+}
+input[type=email]:focus{
+    color: rgb(42, 49, 70);
+    outline: none;
+}
+h2{
+    color: black;
+}
+a{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    -webkit-text-stroke: .3px rgb(255, 255, 255);
+}
+div#image{
+    margin: 0%;
+    padding: 0%;
+    text-align: center;
+}
+div#image a, div#image a img{
+    margin: 0%;
+    padding: 0%;
+    width: 390px;
+    height: 190px;
+}

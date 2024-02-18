@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Prisijungimas</title>
+    <script defer src="/socket.io/socket.io.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script defer src="/login.js"></script>
+    <link rel="stylesheet" href="/login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap" rel="stylesheet">
+</head>
+<body>
+    <ul id="main">
+        <li>
+            <h1>Prisijunk</h1>
+        </li>
+        <li>
+            <form id="login-form">
+                <input type="text" name="email" id="email" placeholder="Vardas" required>
+                <input type="password" name="orgPassword" id="password" placeholder="Slaptažodis" minlength="5" required>
+                <input type="submit" value="Prisijunk">
+            </form>
+        </li>
+    </ul>
+</body>
+</html>

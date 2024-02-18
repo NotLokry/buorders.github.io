@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokalbiai</title>
+    <link rel="stylesheet" href="/group.css">
+    <script defer src="/socket.io/socket.io.js"></script>
+    <script defer src="/group.js"></script>
+    <script defer>const name = "<%=user.name%>";const id = "<%=user._id%>";const groupName = "<%=group.name%>"</script>
+</head>
+<body>
+    <div id="groups">
+        <ul>
+            <li id="group-make">
+                <form id="group-make-form" onsubmit="">
+                    <input type="text" name="group-name" id="group-name" placeholder="Įrašyk grupes varda čia" required>
+                    <input type="submit" value="Sukurti">
+                </form>
+            </li>
+            <% for(var i=0; i < groups.length; i++) { %>
+                    <li>
+                        <a href="/group/<%= groups[i].name%>">
+                            <%= groups[i].name%>
+                        </a>
+                    </li>
+            <% } %>
+        </ul>
+    </div>
+    <div id="zmones">
+        <ul>
+            <form action="" id="add-friend-form">
+                <input type="text" name="friend-name" id="friend-name" placeholder="Draugo Vardas" required>
+                <input type="submit" value="Prideti Drauga"></input>
+            </form>
+            <div id="friendtab" class="tabcontent">
+                <% for(var i=0; i < group.users.length; i++) { %>
+                    <li>
+                        <button id="<%= group.users[i]._id%>" class="users">
+                            <%= group.users[i].name%>
+                        </button>
+                    </li>
+                <% } %>
+            </div>
+            
+        </ul>
+    </div>
+    <div id="chat">
+                <div class="message-containers" id="message-container">
+                    <%for(var x=0; x < group.messages.length; x++){%>
+                        <div>
+                            <ul>
+                                <li>
+                                    <%= group.messages[x].from.name%>: <%= group.messages[x].content%> 
+                                </li>
+                                <%if( group.messages[x].fileURL ){%>
+                                    <li>
+                                        <%if( group.messages[x].type === "image" ){%>
+                                            <a href="<%=group.messages[x].fileURL%>"><img src="<%=group.messages[x].fileURL%>"></a>
+                                        <%}else if( group.messages[x].type === "video" ){%>
+                                            <a href="<%=group.messages[x].fileURL%>"><video src="<%=group.messages[x].fileURL%>"controls></video></a>
+                                        <%}else if( group.messages[x].type === "audio" ){%>
+                                            <a href="<%=group.messages[x].fileURL%>"><audio src="<%=group.messages[x].fileURL%>"controls></audio></a>
+                                        <%}%>
+                                        
+                                    </li>
+                                    <li>
+                                        <a href="<%=group.messages[x].fileURL%>" download><button id="download">Atsisiuti faila</button></a>
+                                    </li>
+                                <%}%>
+                            </ul>
+                        </div>
+                    <%}%>
+                </div>
+                <form class="send-containers" id="send-container" onsubmit="sendChatMessage(event,'<%=group.name%>','<%=group._id%>','<%=user._id%>','<%=user.name%>',document.getElementById(`message-input`).value,document.getElementById(`file-input`).files[0])">
+                    <input type="file" accept="image/*, video/*, audio/*" id="file-input">
+                    <input type="text" class="message-inputs" id="message-input" required>
+                    <button type="submit" id="send-button">Siūsti</button>
+                </form>
+    </div>
+</body>
+</html>
